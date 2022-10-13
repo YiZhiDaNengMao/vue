@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>条件渲染</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="div">
+    <div v-if="num % 3 == 0">div1</div>
+    <div v-else-if="num % 3 != 0">div2</div>
+    <div v-else>div3</div>
+
+    <span v-show="flag"></span>
+</div>
+<script>
+    new Vue({
+        el: '#div',
+        data: {
+            num: 3,
+            flag: true
+        }
+    })
+</script>
+</body>
+</html>

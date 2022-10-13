@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>狗子函数</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1 style="color: #ffd2d9">{{msg}}</h1>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            //初始化为空
+            msg: ""
+        },
+        //狗子函数 => vue实例化的时候
+        created() {
+            this.msg="猪霸天牛逼！"
+        }
+    })
+</script>
+</html>

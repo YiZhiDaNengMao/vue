@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>快速入门02</title>
+</head>
+<body>
+<!--  视图: 显示的内容-->
+    <div id="div">
+    <!--    具体要显示的内容-->
+        <h1 style="color: #b37be6">姓名: {{name}}</h1>
+        <h1 style="color: #f4afaf">班级: {{classGrade}}</h1>
+        <button onclick="fun1()">hi~</button>
+        <button onclick="fun2()">another</button>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    let vue = new Vue({
+        el:"#div",
+        data:{
+            name: "猪霸天",
+            classGrade: "魔神6班"
+        },
+        methods:{
+            student() {
+                alert(this.classGrade + "的" + this.name + "在此!" )
+            }
+        }
+    })
+
+    function fun1(){
+        vue.student()
+    }
+
+    function fun2(){
+        vue.name = "龙傲天"
+        vue.classGrade = "妖神7班"
+    }
+</script>
+</html>

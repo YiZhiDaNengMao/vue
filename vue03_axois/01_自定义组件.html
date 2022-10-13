@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义组件</title>
+    <script src="js/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+    <!--组成部分
+        Vue.component(“自定义组件名称",{
+            props:属性
+            data:数据函数
+            template:要解析的html模板<form></form>
+        })
+    -->
+
+    <!--自定义标签-->
+    <div id="app">
+        <bai-button>{{msg}}</bai-button>
+    </div>
+</body>
+<script>
+    Vue.component("bai-button",{
+        props:["style"],
+        data:function (){
+            return{
+                msg:"小白"
+            }
+        },
+        template:"<button style='background-color: #ffe5e8;border-radius: 6px'>{{msg}}</button>"
+    });
+    new Vue({
+        el:"#app",
+    })
+</script>
+</html>

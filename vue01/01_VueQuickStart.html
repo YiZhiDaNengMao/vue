@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>快速入门01</title>
+</head>
+<body>
+<!--  视图: 显示的内容-->
+    <div id="div">
+    <!--    具体要显示的内容-->
+        <h1 style="color: #ffc8e5">{{msg}}</h1>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    new Vue({
+        el:"#div",
+        data:{
+            msg: "Vue: 猪霸天牛逼！"
+        }
+    })
+</script>
+</html>

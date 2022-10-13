@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>表单绑定</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="div">
+    姓名: <input type="text" id="name" v-model="user.name"><br/>
+    年龄: <input type="number" id="age" v-model="user.age"><br/>
+    <input type="button" @click="getInfo()" value="获取信息"/>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#div",
+        data: {
+            user:{name:"", age:""}
+        },
+        methods: {
+            getInfo: function() {
+                alert(this.user.name + " " + this.user.age)
+                this.user.name = "霸天猪^(*￣(oo)￣)^"
+                this.user.age = 777
+            }
+        }
+    })
+</script>
+</html>

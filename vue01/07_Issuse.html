@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="div">
+    <h1 style="color: #ffc8e5">{{name}}</h1>
+    <button v-on:click="change()">改名卡1</button>
+    <button v-on:dblclick="change2()">双击改名卡</button>
+    <button @click="change()">改名卡2</button>
+    <button v-on:keydown="change2()">改名卡3</button>
+    <button v-on:mouseover="change()">改名卡4</button>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#div",
+        data: {
+            name:"猪霸天"
+        },
+        methods:{
+            change:function (){
+                this.name="霸天猪^(*￣(oo)￣)^"
+            },
+            change2 (){
+                this.name="^(*￣(oo)￣)^猪霸天"
+            }
+        }
+    })
+</script>
+</html>

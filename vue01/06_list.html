@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>列表渲染</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="div">
+    <ul>
+        <!--遍历数组，获取名字-->
+        <li v-for="name in names">{{name}}</li>
+        <br/>
+        <!--遍历对象，获取对象信息-->
+        <li v-for="value in user">{{value}}</li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el: '#div',
+        data: {
+            names:["猪霸天","牛魔天","龙傲天"],
+            user:{
+                name:'霸天猪',
+                age:6
+            }
+        }
+    })
+</script>
+</body>
+</html>

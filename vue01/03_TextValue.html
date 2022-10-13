@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>文本插值</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--  视图: 显示的内容-->
+<div id="div">
+    <!--    具体要显示的内容-->
+    <h1>{{name}}: {{classGrade}}</h1>
+    <div v-text="name"></div>
+    <div v-html="classGrade"></div>
+</div>
+<script>
+    new Vue({
+        el: '#div',
+        data: {
+            name: "猪霸天",
+            classGrade: "魔神6班"
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>狗子函数</title>
+    <script src="js/vue.js"></script>
+    <script src="js/axios-0.18.0.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<div id="app">
+    <h3 style="color: #f8b3be">users: {{users}}</h3>
+    <h3 style="color: #d1b5f8">books: {{books}}</h3>
+</div>
+</body>
+<script>
+    let ve = new Vue({
+        el: "#app",
+        data: {
+            users:[],
+            books:[]
+        },
+        created() {
+            axios.get("http://localhost:8080/book/13").then(res => {
+                ve.books = res.data;
+                console.log(res)
+            }).catch(err => {
+                console.log(err)
+            })
+            axios.post("data.json").then(res => {
+                ve.users = res.data;
+                console.log(res)
+            }).catch(err => {
+                console.log(err)
+            })
+        }
+
+    })
+
+</script>
+</html>
